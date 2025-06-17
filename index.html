@@ -31,7 +31,52 @@
 <button class="player-button" onclick="document.getElementById('bgm').play()">▶</button>
 <button class="player-button" onclick="document.getElementById('bgm').pause()">■</button>
 
+ <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
 
+    .layer {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #background {
+      background-image: url("被写体.png"); 
+      opacity: 0.6;
+    }
+
+    #foreground {
+      background-image: url("被写体 2.png"); 
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="layer" id="background"></div>
+  <div class="layer" id="foreground"></div>
+
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+
+   
+      document.getElementById('background').style.transform =
+        `translate(${x * 30}px, ${y * 30}px)`;
+
+    
+      document.getElementById('foreground').style.transform =
+        `translate(${x * 80}px, ${y * 80}px)`;
+    });
+  </script>
     <p></p>
   </body>
 </html>
