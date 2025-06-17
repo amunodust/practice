@@ -14,6 +14,22 @@
   <source src="music.mp3" type="audio/mpeg">
   Your browser does not support the audio tag.
 </audio>
+<style>
+  .player-button {
+    font-family: monospace;
+    font-size: 20px;
+    color: lime;
+    background: black;
+    border: 1px solid lime;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<audio id="bgm" src="music.mp3" loop></audio>
+<button class="player-button" onclick="document.getElementById('bgm').play()">▶ PLAY</button>
+<button class="player-button" onclick="document.getElementById('bgm').pause()">■ STOP</button>
 
 
     <p></p>
